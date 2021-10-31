@@ -63,7 +63,7 @@ public class UserServiceImpl implements IUserService {
 		userRepository.deleteById(Long.parseLong(id)); 
 		// TODO Log à ajouter à la fin de la méthode 
 	}
-
+// git test
 	@Override
 	public User retrieveUser(String id) {
 		User u = null;
