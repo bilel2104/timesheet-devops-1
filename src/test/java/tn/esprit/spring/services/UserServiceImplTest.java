@@ -65,7 +65,7 @@ public class UserServiceImplTest {
 		@Test
 		@Order(4)
 		public void testRetrieveUser() {
-			User userRetrieved = us.retrieveUser("46");
+			User userRetrieved = us.retrieveUser("48");
 			Assertions.assertEquals(48L, userRetrieved.getId());
 		}
 		
