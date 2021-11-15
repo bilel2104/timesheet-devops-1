@@ -6,8 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
@@ -18,14 +17,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import tn.esprit.spring.entities.Role;
 import tn.esprit.spring.entities.User;
-import tn.esprit.spring.services.UserServiceImpl;
+
 
 @SpringBootTest
 @TestMethodOrder(OrderAnnotation.class)
 public class UserServiceImplTest {
 	
-	private static final Logger l = LogManager.getLogger(UserServiceImpl.class);
-	
+
 		@Autowired
 		IUserService us; 
 	

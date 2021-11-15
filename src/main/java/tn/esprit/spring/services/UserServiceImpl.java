@@ -23,14 +23,14 @@ public class UserServiceImpl implements IUserService {
 		List<User> users = null; 
 		try {
 	
-			// TODO Log à ajouter en début de la méthode 
+			l.info("In retrieveAllUsers() : ");
 			users = (List<User>) userRepository.findAll();  
 			for (User user : users) {
-				// TODO Log à ajouter pour affiher chaque user dans les logs   
+				l.debug("user +++ : " + user);
 			} 
-			// TODO Log à ajouter à la fin de la méthode 
+			l.info("Out of retrieveAllUsers() : ");
 		}catch (Exception e) {
-			// TODO Log à ajouter pour gérer les erreurs 
+			l.error("Error in retrieveAllUsers() : " + e);
 		}
 
 		return users;
@@ -39,34 +39,33 @@ public class UserServiceImpl implements IUserService {
 
 	@Override
 	public User addUser(User u) {
-		// TODO Log à ajouter en début de la méthode 
-		User u_saved = userRepository.save(u); 
-		// TODO Log à ajouter à la fin de la méthode 
-		return u_saved; 
+		l.info("In method Add User");
+		User uSaved = userRepository.save(u);
+		l.info("Utilisateur Ajoute");
+		return uSaved;
 	}
 
 	@Override 
 	public User updateUser(User u) { 
-		// TODO Log à ajouter en début de la méthode 
-		User u_saved = userRepository.save(u); 
-		// TODO Log à ajouter à la fin de la méthode 
-		return u_saved; 
+		l.info("update en cours");
+		User uSaved = userRepository.save(u);
+		l.info("update done!!");
+		return uSaved;
 	}
 
 	@Override
 	public void deleteUser(String id) {
-		// TODO Log à ajouter en début de la méthode 
-		userRepository.deleteById(Long.parseLong(id)); 
-		// TODO Log à ajouter à la fin de la méthode 
+		l.info("Deleting User ...");
+		userRepository.deleteById(Long.parseLong(id));
+		l.info("User {} deleted succesfully!",id);
 	}
 
 	@Override
 	public User retrieveUser(String id) {
-		// TODO Log à ajouter en début de la méthode 
-		//User u =  userRepository.findById(Long.parseLong(id)).orElse(null);
-		User u =  userRepository.findById(Long.parseLong(id)).get(); 
-		// TODO Log à ajouter à la fin de la méthode 
-		return u; 
+		l.info("Recherche user en cours...");
+		User u =  userRepository.findById(Long.parseLong(id)).orElse(null);
+		l.info("user {} retrieved",u);
+		return u;
 	}
 
 }
