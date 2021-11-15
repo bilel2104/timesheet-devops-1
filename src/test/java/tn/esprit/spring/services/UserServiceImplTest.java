@@ -18,7 +18,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import tn.esprit.spring.entities.Role;
 import tn.esprit.spring.entities.User;
-import tn.esprit.spring.services.IUserService;
 import tn.esprit.spring.services.UserServiceImpl;
 
 @SpringBootTest
@@ -35,7 +34,7 @@ public class UserServiceImplTest {
 		public void testRetrieveAllUsers() {
 			List<User> listUsers = us.retrieveAllUsers(); 
 			// if there are 7 users in DB : 
-			Assertions.assertEquals(10,listUsers.size());
+			Assertions.assertEquals(12,listUsers.size());
 		
 			
 		}
@@ -56,28 +55,21 @@ public class UserServiceImplTest {
 		public void testModifyUser() throws ParseException   {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = dateFormat.parse("2015-03-23");
-			User u = new User(19L, "bilel","b", d, Role.INGENIEUR); 
+			User u = new User(48L, "bilel","b", d, Role.INGENIEUR); 
 			User userUpdated  = us.updateUser(u); 
 			Assertions.assertEquals(u.getLastName(), userUpdated.getLastName());
 		}
 	
+		
+	
 		@Test
 		@Order(4)
 		public void testRetrieveUser() {
-			User userRetrieved = us.retrieveUser("29");
-			Assertions.assertEquals(19L, userRetrieved.getId());
+			User userRetrieved = us.retrieveUser("46");
+			Assertions.assertEquals(48L, userRetrieved.getId());
 		}
 		
-		@Test
-		@Order(5)
-		public void testDeleteUser() {
 		
-			us.deleteUser("29");
-			Assertions.assertNull(us.retrieveUser("29"));
-	
-		}
-		
-	
 		 
 		 
  
