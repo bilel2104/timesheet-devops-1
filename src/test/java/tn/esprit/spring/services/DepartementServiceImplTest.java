@@ -23,7 +23,7 @@ public class DepartementServiceImplTest {
         List<Departement> listDepartements = ds.retrieveAllDepartements();
         Assertions.assertTrue(listDepartements.size()>=1);
     }
-/*
+
     @Test
     @Order(2)
     public void testAddDepartment(){
@@ -44,5 +44,12 @@ public class DepartementServiceImplTest {
         Assertions.assertEquals(1,ds.retrieveDepartement("1").getId());
     }
 
-   */
+    /*
+    @Test
+    @Order(3)
+    public void testDeleteDepartment(){
+        ds.deleteDepartement("2");
+        Departement departement = null;
+        Assertions.assertNull(departement);
+    }*/
 }
