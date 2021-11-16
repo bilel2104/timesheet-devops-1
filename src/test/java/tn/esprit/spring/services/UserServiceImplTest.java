@@ -32,7 +32,7 @@ public class UserServiceImplTest {
 		public void testRetrieveAllUsers() {
 			List<User> listUsers = us.retrieveAllUsers(); 
 			// if there are 7 users in DB : 
-			Assertions.assertEquals(22,listUsers.size());
+			Assertions.assertEquals(23,listUsers.size());
 		
 			
 		}
