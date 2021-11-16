@@ -26,7 +26,7 @@ public class UserServiceImplTest {
 
 		@Autowired
 		IUserService us; 
-	
+	/*
 		@Test
 		@Order(1)
 		public void testRetrieveAllUsers() {
@@ -37,9 +37,9 @@ public class UserServiceImplTest {
 			
 		}
 		
-		
+		*/
 		@Test
-		@Order(2)
+		@Order(1)
 		public void testAddUser() throws ParseException {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = dateFormat.parse("2015-03-23");
@@ -49,7 +49,7 @@ public class UserServiceImplTest {
 		}
 	 
 		@Test
-		@Order(3)
+		@Order(2)
 		public void testModifyUser() throws ParseException   {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = dateFormat.parse("2015-03-23");
@@ -61,7 +61,7 @@ public class UserServiceImplTest {
 		
 	
 		@Test
-		@Order(4)
+		@Order(3)
 		public void testRetrieveUser() {
 			User userRetrieved = us.retrieveUser("49");
 			Assertions.assertEquals(49L, userRetrieved.getId());
