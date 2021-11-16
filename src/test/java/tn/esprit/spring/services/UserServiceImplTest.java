@@ -58,7 +58,7 @@ public class UserServiceImplTest {
 			Assertions.assertEquals(u.getLastName(), userUpdated.getLastName());
 		}
 	
-		
+		/*
 	
 		@Test
 		@Order(3)
@@ -68,7 +68,7 @@ public class UserServiceImplTest {
 		}
 		
 		
-		 
+		 */
 		 
  
 }
