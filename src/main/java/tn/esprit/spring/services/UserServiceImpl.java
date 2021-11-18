@@ -71,6 +71,7 @@ public class UserServiceImpl implements IUserService {
 		l.info("Out of deleteUser() : ");
 	}
 
+
 	@Override
 	public User retrieveUser(String id) {
 

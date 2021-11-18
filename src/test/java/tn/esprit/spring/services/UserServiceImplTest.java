@@ -26,20 +26,20 @@ public class UserServiceImplTest {
 
 		@Autowired
 		IUserService us; 
-	/*
+
 		@Test
 		@Order(1)
 		public void testRetrieveAllUsers() {
 			List<User> listUsers = us.retrieveAllUsers(); 
 			// if there are 7 users in DB : 
-			Assertions.assertEquals(23,listUsers.size());
+			Assertions.assertEquals(9,listUsers.size());
 		
 			
 		}
 		
-		*/
+		
 		@Test
-		@Order(1)
+		@Order(2)
 		public void testAddUser() throws ParseException {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = dateFormat.parse("2015-03-23");
@@ -49,26 +49,35 @@ public class UserServiceImplTest {
 		}
 	 
 		@Test
-		@Order(2)
+		@Order(3)
 		public void testModifyUser() throws ParseException   {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = dateFormat.parse("2015-03-23");
-			User u = new User(49L, "bilel","b", d, Role.INGENIEUR); 
+			User u = new User(81L, "bilel","b", d, Role.INGENIEUR); 
 			User userUpdated  = us.updateUser(u); 
 			Assertions.assertEquals(u.getLastName(), userUpdated.getLastName());
 		}
 	
-		/*
+		
 	
 		@Test
-		@Order(3)
+		@Order(4)
 		public void testRetrieveUser() {
-			User userRetrieved = us.retrieveUser("49");
-			Assertions.assertEquals(49L, userRetrieved.getId());
+			User userRetrieved = us.retrieveUser("84");
+			Assertions.assertEquals(81L, userRetrieved.getId());
 		}
+		@Test 
+		@Order(5)
+		public void testdeleteUser() {
+			
+			us.deleteUser("84");
+			Assertions.assertNull(us.retrieveUser("84"));
+			
+			
+		}
+
 		
 		
-		 */
 		 
  
 }

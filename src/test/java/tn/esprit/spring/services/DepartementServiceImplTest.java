@@ -43,13 +43,14 @@ public class DepartementServiceImplTest {
     public void testRetrieveDepartment(){
         Assertions.assertEquals(1,ds.retrieveDepartement("1").getId());
     }
-
-    /*
-    @Test
-    @Order(3)
+/*
+   @Test
+    @Order(5)
     public void testDeleteDepartment(){
         ds.deleteDepartement("2");
         Departement departement = null;
         Assertions.assertNull(departement);
-    }*/
+    }
+  */
+    
 }
